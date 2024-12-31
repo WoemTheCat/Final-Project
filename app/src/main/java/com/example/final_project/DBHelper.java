@@ -3,7 +3,6 @@ package com.example.final_project;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static int DB_VERSION = 1;
@@ -15,11 +14,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "Create table account(_id integer primary key autoincrement, Title varchar(20), Date varchar(20), Money varchar(20))";
+        String sql = "CREATE TABLE account(_id TEXT PRIMARY KEY," +
+                "Title VARCHAR(20)," +
+                "Date VARCHAR(20)," +
+                "Money VARCHAR(20))";
         db.execSQL(sql);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
 }

@@ -7,10 +7,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tv_cost_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:text="項目"
+        android:textColor="@android:color/black"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="205dp"
+        android:text="日期"
+        android:textColor="@android:color/black"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="350dp"
+        android:text="價錢"
+        android:textColor="@android:color/black"
+        android:textSize="22sp" />
+
     <ListView
         android:id="@+id/list_view"
         android:layout_width="wrap_content"
-        android:layout_height="650dp" />
+        android:layout_height="650dp"
+        android:layout_below="@+id/tv_date" />
 
     <ImageButton
         android:id="@+id/add"

@@ -5,17 +5,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-
-
 
 public class MainActivity extends AppCompatActivity {
     private DBHelper helper;
@@ -40,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private void initData() {
         list = new ArrayList<>();
         SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.query("account", null, null, null, null, null , null);
+        Cursor cursor = db.query("account", null, null, null, null, null, null);
         while (cursor.moveToNext()) {
             costList clist = new costList();
             clist.set_id(cursor.getString(cursor.getColumnIndexOrThrow("_id")));
@@ -50,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             list.add(clist);
         }
         listView.setAdapter(new ListAdapter(this, list));
+        cursor.close();
         db.close();
     }
 

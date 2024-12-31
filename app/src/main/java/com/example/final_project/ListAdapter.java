@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import java.util.List;
@@ -41,10 +40,9 @@ public class ListAdapter  extends BaseAdapter {
         TextView tv_title = view.findViewById(R.id.tv_title);
         TextView tv_date = view.findViewById(R.id.tv_date);
         TextView tv_money = view.findViewById(R.id.tv_money);
-
-        tv_title.setText(mList.get(position).getTitle());
-        tv_date.setText(mList.get(position).getDate());
-        tv_money.setText(mList.get(position).getMoney());
+        tv_title.setText(item.getTitle());
+        tv_date.setText(item.getDate());
+        tv_money.setText(item.getMoney());
 
         return view;
     }
