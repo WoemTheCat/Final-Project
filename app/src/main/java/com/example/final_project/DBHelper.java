@@ -14,17 +14,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE account(_id TEXT PRIMARY KEY," +
+        String sql = "CREATE TABLE account(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "Title VARCHAR(20)," +
                 "Date VARCHAR(20)," +
                 "Money VARCHAR(20))";
         db.execSQL(sql);
-    }
-
-    public void deleteRecord(String id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete("account", "_id = ?", new String[]{id});
-        db.close();
     }
 
     @Override

@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 public class ListAdapter  extends BaseAdapter {
@@ -45,10 +48,6 @@ public class ListAdapter  extends BaseAdapter {
         tv_money.setText(item.getMoney());
 
         return view;
-    }
-
-    public void deleteAccount(View view) {
-
     }
 
     public ListAdapter(Context context, List<costList> list) {

@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -58,6 +60,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void deleteAccount(View view) {
+        View parent = (View) view.getParent(); // 找到 list_item 的父視圖
+        TextView tv_title = parent.findViewById(R.id.tv_title); // 獲取隱藏的 tv_title
+        String title = tv_title.getText().toString(); // 獲取該條目的 title
+
+        SQLiteDatabase db = helper.getWritableDatabase();
+        int rowsDeleted = db.delete("account", "Title = ?", new String[]{title});
+        db.close();
+
+        if (rowsDeleted > 0) {
+            Toast.makeText(this, "刪除成功", Toast.LENGTH_SHORT).show();
+            initData(); // 刷新數據
+        } else {
+            Toast.makeText(this, "刪除失敗", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
