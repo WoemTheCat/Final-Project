@@ -11,7 +11,7 @@
         android:id="@+id/tv_cost_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="36dp"
         android:text="項目"
         android:textColor="@android:color/black"
         android:textSize="22sp" />
@@ -20,7 +20,8 @@
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="205dp"
+        android:layout_toEndOf="@id/tv_cost_name"
+        android:layout_marginStart="70dp"
         android:text="日期"
         android:textColor="@android:color/black"
         android:textSize="22sp" />
@@ -29,7 +30,8 @@
         android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="350dp"
+        android:layout_toEndOf="@id/tv_date"
+        android:layout_marginStart="50dp"
         android:text="價錢"
         android:textColor="@android:color/black"
         android:textSize="22sp" />

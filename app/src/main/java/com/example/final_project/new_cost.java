@@ -61,4 +61,9 @@ public class new_cost extends AppCompatActivity {
             finish();
         }
     }
+
+    public void cancelButton(View view) {
+        setResult(1);
+        finish();
+    }
 }

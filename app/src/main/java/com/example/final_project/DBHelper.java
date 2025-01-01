@@ -21,6 +21,12 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(sql);
     }
 
+    public void deleteRecord(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("account", "_id = ?", new String[]{id});
+        db.close();
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }

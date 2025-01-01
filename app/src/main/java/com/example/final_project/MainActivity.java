@@ -5,8 +5,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
@@ -52,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
     public void addAccount(View view) {
         Intent intent = new Intent(MainActivity.this, new_cost.class);
         startActivityForResult(intent, 1);
+    }
+
+    public void deleteAccount(View view) {
     }
 
     @Override

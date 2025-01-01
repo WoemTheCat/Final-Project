@@ -47,6 +47,10 @@ public class ListAdapter  extends BaseAdapter {
         return view;
     }
 
+    public void deleteAccount(View view) {
+
+    }
+
     public ListAdapter(Context context, List<costList> list) {
         mList = list;
         mLayoutInflater = LayoutInflater.from(context);
